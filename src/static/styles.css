@@ -12,16 +12,18 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f5f5f5;
+  background: linear-gradient(135deg, #ffeef8 0%, #e8f4f8 25%, #fff4e6 50%, #f0e6ff 75%, #ffe6f0 100%);
+  min-height: 100vh;
 }
 
 header {
   text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
-  background-color: #1a237e;
-  color: white;
+  background: linear-gradient(135deg, #ffb3d9 0%, #b3e0ff 50%, #d4b3ff 100%);
+  color: #4a4a4a;
   border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
@@ -42,32 +44,49 @@ main {
 }
 
 section {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 500px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+section:nth-child(odd) {
+  border-color: #ffccf2;
+}
+
+section:nth-child(even) {
+  border-color: #ccebff;
 }
 
 section h3 {
   margin-bottom: 20px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #ddd;
-  color: #1a237e;
+  border-bottom: 2px solid;
+  border-image: linear-gradient(to right, #ffb3d9, #b3e0ff, #ffd9b3, #d4b3ff) 1;
+  color: #7b5ba1;
 }
 
 .activity-card {
   margin-bottom: 15px;
   padding: 15px;
-  border: 1px solid #ddd;
+  border: 2px solid #e6ccff;
   border-radius: 5px;
-  background-color: #f9f9f9;
+  background: linear-gradient(135deg, #fff9fc 0%, #f0f9ff 100%);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.activity-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(139, 99, 200, 0.2);
 }
 
 .activity-card h4 {
   margin-bottom: 10px;
-  color: #0066cc;
+  color: #8b63c8;
 }
 
 .activity-card p {
@@ -77,13 +96,13 @@ section h3 {
 .participants-section {
   margin-top: 12px;
   padding: 12px;
-  background-color: #e3f2fd;
+  background: linear-gradient(135deg, #ffe6f7 0%, #e6f3ff 100%);
   border-radius: 4px;
-  border-left: 4px solid #1976d2;
+  border-left: 4px solid #ff99d6;
 }
 
 .participants-section strong {
-  color: #1565c0;
+  color: #9966cc;
   font-size: 14px;
   display: block;
   margin-bottom: 8px;
@@ -96,7 +115,7 @@ section h3 {
 }
 
 .participant-item {
-  color: #424242;
+  color: #666699;
   font-size: 14px;
   margin-bottom: 4px;
   line-height: 1.4;
@@ -104,7 +123,7 @@ section h3 {
 }
 
 .no-participants {
-  color: #757575;
+  color: #9999cc;
   font-style: italic;
   font-size: 14px;
   display: inline-block;
@@ -119,30 +138,41 @@ section h3 {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+  color: #7b5ba1;
 }
 
 .form-group input,
 .form-group select {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 2px solid #e6ccff;
   border-radius: 4px;
   font-size: 16px;
+  background-color: #fffbfe;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #cc99ff;
 }
 
 button {
-  background-color: #1a237e;
+  background: linear-gradient(135deg, #cc99ff 0%, #99ccff 100%);
   color: white;
   border: none;
   padding: 10px 15px;
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 4px rgba(153, 102, 204, 0.3);
 }
 
 button:hover {
-  background-color: #3949ab;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(153, 102, 204, 0.4);
 }
 
 .message {
@@ -152,21 +182,21 @@ button:hover {
 }
 
 .success {
-  background-color: #e8f5e9;
-  color: #2e7d32;
-  border: 1px solid #a5d6a7;
+  background-color: #e8f8e8;
+  color: #2d7a2d;
+  border: 2px solid #99e699;
 }
 
 .error {
-  background-color: #ffebee;
-  color: #c62828;
-  border: 1px solid #ef9a9a;
+  background-color: #ffe6f0;
+  color: #cc3366;
+  border: 2px solid #ffb3d1;
 }
 
 .info {
-  background-color: #d1ecf1;
-  color: #0c5460;
-  border: 1px solid #bee5eb;
+  background-color: #e6f3ff;
+  color: #3366cc;
+  border: 2px solid #99ccff;
 }
 
 .hidden {
@@ -177,5 +207,5 @@ footer {
   text-align: center;
   margin-top: 30px;
   padding: 20px;
-  color: #666;
+  color: #8b7ba8;
 }
